@@ -17,11 +17,12 @@
   "author": "Tuhin Adhikari",
   "license": "MIT",
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "parcel": "^2.16.1",
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "parcel": "^2.16.1"
   }
 }
