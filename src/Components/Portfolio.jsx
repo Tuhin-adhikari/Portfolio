@@ -1,83 +1,88 @@
-/**
- * Portfolio component
- *
- * Highlights some of  your creations. These can be designs, websites,
- * open source contributions, articles you've written and more.
- *
- * This is a great area for you to to continually add to and refine
- * as you continue to learn and create.
- */
-
 import React from "react";
 
-/**
- * Desk image
- *
- * Below is a sample desk image. Feel free to update this to an image of your choice,
- * updating below imageAltText to string that represents what you see in that image.
- *
- * Need an image? Check out https://unsplash.com to download a photo you
- * freely use on your site.
- */
-import image from "../images/design-desk.jpeg";
-
-const imageAltText = "desktop with books and laptop";
-
-/**
- * Project list
- *
- * An array of objects that will be used to display for your project
- * links section. Below is a sample, update to reflect links you'd like to highlight.
- */
-const projectList = [
+const projects = [
   {
-    title: "10 Things To Know About Azure Static Web Apps 🎉",
+    name: "Food Warden",
+    url: "https://github.com/tuhinadhikari/Food-Warden",
     description:
-      "Collaboration to create a beginner friendly article to help explain Azure Static Web Apps and tooling to get started.",
-    url: "https://dev.to/azure/10-things-to-know-about-azure-static-web-apps-3n4i",
+      "A React + Firebase food ordering platform for PG and hostel students with slot-based delivery and loyalty rewards.",
   },
   {
-    title: "Web Development for Beginners",
+    name: "PSA Website",
+    url: "https://github.com/tuhinadhikari/PSA-Website",
     description:
-      "Contributed sketch note imagery to accompany each lesson. These help provide visual representation of what is being taught.",
-    url: "https://github.com/microsoft/web-dev-for-beginners",
+      "Multi-page dynamic website for the Physics Student Association featuring event management and team showcases.",
   },
   {
-    title: "My Resume Site",
+    name: "INCPUC",
+    url: "https://github.com/tuhinadhikari/INCPUC",
     description:
-      "Created from Microsoft's resume workshop and deployed to GitHub pages. Includes my experience and design abilities.",
-    url: "https://github.com/microsoft/workshop-library/tree/main/full/build-resume-website",
+      "Event management and participation platform for college clubs with real-time data tracking.",
   },
   {
-    title: "GitHub Codespaces and github.dev",
+    name: "InstaTask Chatbot",
+    url: "https://github.com/tuhinadhikari/InstaTask-Chatbot",
     description:
-      "Video interview to explain when to use GitHub.dev versus GitHub Codespaces, and how best to use each tool.",
-    url: "https://www.youtube.com/watch?v=c3hHhRME_XI",
+      "AI chatbot for automating task allocation and team productivity using conversational interface.",
   },
 ];
 
 const Portfolio = () => {
   return (
-    <section className="padding" id="portfolio">
-      <h2 style={{ textAlign: "center" }}>Portfolio</h2>
-      <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }}>
-        <div style={{ maxWidth: "40%", alignSelf: "center" }}>
-          <img
-            src={image}
-            style={{ height: "90%", width: "100%", objectFit: "cover" }}
-            alt={imageAltText}
-          />
-        </div>
-        <div className="container">
-          {projectList.map((project) => (
-            <div className="box" key={project.title}>
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <h3 style={{ flexBasis: "40px" }}>{project.title}</h3>
-              </a>
-              <p className="small">{project.description}</p>
-            </div>
-          ))}
-        </div>
+    <section
+      id="portfolio"
+      style={{
+        backgroundColor: "#1e1e1e", // deep gray
+        color: "#f5f5f5",
+        padding: "4rem 2rem",
+      }}
+    >
+      <h2 className="text-3xl font-bold text-center mb-12">Portfolio</h2>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "2rem",
+          maxWidth: "1000px",
+          margin: "0 auto",
+        }}
+      >
+        {projects.map((project) => (
+          <div
+            key={project.name}
+            style={{
+              backgroundColor: "#2b2b2b", // slightly lighter gray
+              padding: "2rem",
+              borderRadius: "0.75rem",
+              boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
+              transition: "transform 0.3s ease, box-shadow 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-5px)";
+              e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.5)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "0 4px 15px rgba(0,0,0,0.3)";
+            }}
+          >
+            <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
+            <p className="text-sm mb-4 text-gray-300">{project.description}</p>
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "#00bcd4",
+                fontWeight: "bold",
+                textDecoration: "none",
+              }}
+            >
+              View on GitHub →
+            </a>
+          </div>
+        ))}
       </div>
     </section>
   );

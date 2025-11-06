@@ -23,6 +23,7 @@ div#main {
 section {
   position: relative;
   width: 100vw;
+  overflow: hidden;
 }
 
 section.min-height {
@@ -122,4 +123,16 @@ a:hover {
 img.socialIcon {
   height: 30px;
   width: 30px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  /* adjust for blending */
+  filter: brightness(0.8);
 }
