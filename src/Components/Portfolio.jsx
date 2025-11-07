@@ -1,4 +1,5 @@
 import React from "react";
+import image from "url:../images/design-desk.jpeg";
 
 const projects = [
   {
@@ -32,7 +33,7 @@ const Portfolio = () => {
     <section
       id="portfolio"
       style={{
-        backgroundColor: "#1e1e1e", // deep gray
+        backgroundColor: "#1e1e1e",
         color: "#f5f5f5",
         padding: "4rem 2rem",
       }}
@@ -41,48 +42,85 @@ const Portfolio = () => {
 
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "2rem",
-          maxWidth: "1000px",
+          display: "flex",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "3rem",
+          maxWidth: "1100px",
           margin: "0 auto",
         }}
       >
-        {projects.map((project) => (
-          <div
-            key={project.name}
+        {/* Left side image */}
+        <div
+          style={{
+            flex: "1 1 400px",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            src={image}
+            alt="workspace design"
             style={{
-              backgroundColor: "#2b2b2b", // slightly lighter gray
-              padding: "2rem",
-              borderRadius: "0.75rem",
-              boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
-              transition: "transform 0.3s ease, box-shadow 0.3s ease",
+              width: "100%",
+              maxWidth: "450px",
+              borderRadius: "1rem",
+              boxShadow: "0 6px 20px rgba(0,0,0,0.4)",
+              objectFit: "cover",
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-5px)";
-              e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.5)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 4px 15px rgba(0,0,0,0.3)";
-            }}
-          >
-            <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
-            <p className="text-sm mb-4 text-gray-300">{project.description}</p>
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
+          />
+        </div>
+
+        {/* Right side content */}
+        <div
+          style={{
+            flex: "1 1 500px",
+            display: "grid",
+            gridTemplateColumns: "1fr",
+            gap: "1.5rem",
+          }}
+        >
+          {projects.map((project) => (
+            <div
+              key={project.name}
               style={{
-                color: "#00bcd4",
-                fontWeight: "bold",
-                textDecoration: "none",
+                backgroundColor: "#2b2b2b",
+                padding: "1.5rem",
+                borderRadius: "0.75rem",
+                boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-5px)";
+                e.currentTarget.style.boxShadow =
+                  "0 8px 20px rgba(0,0,0,0.5)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow =
+                  "0 4px 15px rgba(0,0,0,0.3)";
               }}
             >
-              View on GitHub →
-            </a>
-          </div>
-        ))}
+              <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
+              <p className="text-sm mb-4 text-gray-300">
+                {project.description}
+              </p>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: "#00bcd4",
+                  fontWeight: "bold",
+                  textDecoration: "none",
+                }}
+              >
+                View on GitHub →
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
