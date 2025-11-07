@@ -1,11 +1,37 @@
+/**
+ * About component
+ *
+ * Space for you to describe more about yourself.
+ */
+
 import React from "react";
+
+/**
+ * About background image
+ *
+ * Below is a sample image. Upload the image of your choice into the "images"
+ * directory and import here for use. Then, set imageAltText to string that 
+ * represents what you see in that image.
+ *
+ * Need an image? Check out https://unsplash.com to download a image you
+ * freely use on your site.
+ */
+
+
 import bg from "url:../images/motion-background.jpg";
 
 const imageAltText = "coding workspace with laptop and notes";
 
+/**
+ * Sort description that expands on your title on the Home component.
+ */
 const description =
   "I'm a Computer Science, Maths, and Physics student at St. Joseph's University, Bangalore. I enjoy building modern and efficient web apps using React, Tailwind CSS, and Firebase.";
 
+/**
+ * List of some of skills or technologies you work on, are learning,
+ * passionate about, or enjoy,
+ */
 const skillsList = [
   "React.js & Tailwind CSS",
   "Firebase Authentication",
@@ -15,6 +41,11 @@ const skillsList = [
   "UI/UX & Responsive Design",
 ];
 
+/**
+ * Use this to give more information about what you are passionate about,
+ * how you best work, or even a quote. This will help someone learn more
+ * about you on a professional level.
+ */
 const detailOrQuote =
   "I’m passionate about building impactful digital solutions that make everyday tasks easier. I love combining logic with creativity to design smooth, efficient, and user-friendly experiences.";
 
@@ -45,7 +76,6 @@ const About = () => {
         }}
       />
 
-      {/* Dark gradient overlay for contrast */}
       <div
         style={{
           position: "absolute",
@@ -59,7 +89,6 @@ const About = () => {
         }}
       />
 
-      {/* Content container with subtle glass effect */}
       <div
         style={{
           background: "rgba(255, 255, 255, 0.08)",

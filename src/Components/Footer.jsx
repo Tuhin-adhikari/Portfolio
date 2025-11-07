@@ -1,7 +1,16 @@
+/**
+ * Footer component
+ *
+ * Displays avenues to contact you.
+ * Contact information is passed in from the App component that
+ * renders the Footer.
+ *
+ * If a social value has an empty string it will not be displayed.
+ */
+
 import React from "react";
 import PropTypes from "prop-types";
 
-// ✅ Correct imports for React
 import envelope from "url:../images/socials/envelope.svg";
 import devdotto from "url:../images/socials/devdotto.svg";
 import github from "url:../images/socials/github.svg";
@@ -11,6 +20,12 @@ import medium from "url:../images/socials/medium.svg";
 import twitter from "url:../images/socials/twitter.svg";
 import youtube from "url:../images/socials/youtube.svg";
 
+/**
+ * 💡 Learning resources
+ *
+ *  HTML hyperlinks: https://www.w3schools.com/html/html_links.asp
+ *  Opening links in new tabs: https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/
+ */
 const Footer = ({
   devDotTo,
   email,
