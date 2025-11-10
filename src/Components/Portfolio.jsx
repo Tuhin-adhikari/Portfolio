@@ -30,25 +30,25 @@ import image from "url:../images/design-desk.jpeg";
 const projects = [
   {
     name: "Food Warden",
-    url: "https://github.com/tuhinadhikari/Food-Warden",
+    url: "https://github.com/Tuhin-adhikari/Food-Warden",
     description:
       "A React + Firebase food ordering platform for PG and hostel students with slot-based delivery and loyalty rewards.",
   },
   {
     name: "PSA Website",
-    url: "https://github.com/tuhinadhikari/PSA-Website",
+    url: "https://github.com/Tuhin-adhikari/Physics-Association-website",
     description:
       "Multi-page dynamic website for the Physics Student Association featuring event management and team showcases.",
   },
   {
     name: "INCPUC",
-    url: "https://github.com/tuhinadhikari/INCPUC",
+    url: "https://github.com/Tuhin-adhikari/INCPUC",
     description:
       "Event management and participation platform for college clubs with real-time data tracking.",
   },
   {
     name: "InstaTask Chatbot",
-    url: "https://github.com/tuhinadhikari/InstaTask-Chatbot",
+    url: "https://github.com/Tuhin-adhikari/instaTask-chatbot",
     description:
       "AI chatbot for automating task allocation and team productivity using conversational interface.",
   },
